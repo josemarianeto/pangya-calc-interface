@@ -28,7 +28,7 @@ namespace pangyaCalcWinForm
             var p = wb.Worksheet(1);
             var d = wb.Worksheet("Dados");
             //Tabela 1 Distancia a Altura em Ordem 
-            txtDist.Text =  p.Cell("B1").Value.ToString();
+                txtDist.Text =  p.Cell("B1").Value.ToString();
             txtAltura.Text = p.Cell("B2").Value.ToString();
             txtVento.Text = p.Cell("B3").Value.ToString();
             txtAngulo.Text = Math.Round(float.Parse(p.Cell("B4").Value.ToString()), 2).ToString();
@@ -45,14 +45,13 @@ namespace pangyaCalcWinForm
             txtAim4.Text = Math.Round(float.Parse(p.Cell("E3").Value.ToString()), 2).ToString();
             txtPercent.Text = Math.Round(float.Parse(p.Cell("E4").Value.ToString()), 2).ToString();
             txtPB.Text = Math.Round(float.Parse(p.Cell("E5").Value.ToString()), 2).ToString();
-            txtCalliper.Text = Math.Round(float.Parse(p.Cell("E6").Value.ToString()), 2).ToString();
-            txtSpin.Text = Math.Round(float.Parse(p.Cell("E7").Value.ToString())).ToString();
+            txtCalliper.Text = Math.Round(float.Parse(p.Cell("E6").Value.ToString()), 1).ToString();
+            txtSpin.Text = Math.Round(float.Parse(p.Cell("E7").Value.ToString()),2).ToString();
             tipoTacada.SelectedIndex = Int32.Parse(d.Cell("I35").Value.ToString()) - 1;
             //Fim Tipo Tacada
 
             //Quebras s4 e s8
-            txtQuebrasS4.Text = p.Cell("E17").Value.ToString();
-            txtQuebrasS8.Text = p.Cell("E18").Value.ToString();
+          
             if (p.Cell("E16").Value.ToString() == "4")
             {
                 radioButton1.Checked = true;
@@ -76,6 +75,17 @@ namespace pangyaCalcWinForm
             txtQuebraPX.Text = Math.Round(float.Parse(p.Cell("B17").Value.ToString()), 2).ToString();
             txtQuebraAngulo.Text = Math.Round(float.Parse(p.Cell("B18").Value.ToString()), 2).ToString();
             txtQuebra.Text = Math.Round(float.Parse(p.Cell("B19").Value.ToString()), 9).ToString();
+
+
+            txtHoleP.Text = p.Cell("B23").Value.ToString();
+
+            var pin = wb.Worksheet("Pin++");
+           
+            //btnHole1.Text = p.Cell("D24").Value.ToString();
+            //rbM2.Text = pin.Cell("A25").Value.ToString();
+            //rbM3.Text = pin.Cell("A26").Value.ToString();
+
+
         }
         public void formata()
         {
@@ -132,6 +142,9 @@ namespace pangyaCalcWinForm
 
         }
 
+        
+
+
         private void txtAltura_TextChanged(object sender, EventArgs e)
         {
             var p = wb.Worksheet(1);
@@ -143,7 +156,7 @@ namespace pangyaCalcWinForm
             }
             else
             {
-                p.Cell("B2").Value = txtAltura.Text;
+                p.Cell("B2").Value = txtAltura.Text.Replace(",",".");
                 Campos();
             }
         }
@@ -191,7 +204,7 @@ namespace pangyaCalcWinForm
             }
             else
             {
-                p.Cell("B6").Value = txtTerreno.Text;
+                p.Cell("B6").Value = txtTerreno.Text + "%";
                 Campos();
             }
         }
@@ -281,35 +294,32 @@ namespace pangyaCalcWinForm
             }
             if (tipoTacada.SelectedIndex == 16)
             {
-                p.Cell("I35").Value = 16;
+                p.Cell("I35").Value = 17;
                 Campos();
             }
             if (tipoTacada.SelectedIndex == 17)
             {
-                p.Cell("I35").Value = 16;
+                p.Cell("I35").Value = 18;
                 Campos();
             }
             if (tipoTacada.SelectedIndex == 18)
             {
-                p.Cell("I35").Value = 17;
+                p.Cell("I35").Value = 19;
                 Campos();
             }
             if (tipoTacada.SelectedIndex == 19)
             {
-                p.Cell("I35").Value = 18;
+                p.Cell("I35").Value = 20;
                 Campos();
             }
             if (tipoTacada.SelectedIndex == 20)
             {
-                p.Cell("I35").Value = 19;
+                p.Cell("I35").Value = 21;
                 Campos();
             }
-            if (tipoTacada.SelectedIndex == 21)
-            {
-                p.Cell("I35").Value = 20;
-                Campos();
-            }
-            
+          
+
+
 
         }
 
@@ -429,12 +439,12 @@ namespace pangyaCalcWinForm
             if (txtQuebra.Text == "")
             {
                 txtQuebra.Text = "0";
-                p.Cell("B18").Value = txtQuebra.Text;
+                p.Cell("B19").Value = txtQuebra.Text;
                 Campos();
             }
             else
             {
-                p.Cell("B18").Value = txtQuebra.Text;
+                p.Cell("B19").Value = txtQuebra.Text;
                 Campos();
             }
         }
@@ -445,12 +455,12 @@ namespace pangyaCalcWinForm
             if (txtQuebraAngulo.Text == "")
             {
                 txtQuebraAngulo.Text = "0";
-                p.Cell("B19").Value = txtQuebraAngulo.Text;
+                p.Cell("B18").Value = txtQuebraAngulo.Text;
                 Campos();
             }
             else
             {
-                p.Cell("B19").Value = txtQuebraAngulo.Text;
+                p.Cell("B18").Value = txtQuebraAngulo.Text;
                 Campos();
             }
         }
@@ -458,10 +468,71 @@ namespace pangyaCalcWinForm
         private void btnZerar_Click(object sender, EventArgs e)
         {
             var p = wb.Worksheet(1);
-            p.Cell("B19").Value = 0;
+            
             p.Cell("B18").Value = 0;
             p.Cell("B17").Value = 0;
+           
+
             Campos();
+        }
+
+        private void cbHole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var p = wb.Worksheet(1);
+            if(cbHole.SelectedIndex == 0)
+            {
+                btnHole1.Text = p.Cell("A24").Value.ToString();
+                
+                Campos();
+            }
+           
+        }
+
+        private void txtTerreno_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void oNovoTabs(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{Tab}");
+            }
+        }
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void oNovoTab(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                e.Handled = true;
+                SendKeys.Send("{Tab}");
+            }
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            var slope = txtSlope.Text;
+            txtSlope.Text = "";
+            txtSlope.Text = "-" + slope;
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            var slope = txtSlope.Text;
+            txtSlope.Text = "";
+            txtSlope.Text = slope.Replace("-", "");
+        }
+
+        private void btnWindHill_Click(object sender, EventArgs e)
+        {
+            windhill frm = new windhill();
+            frm.Show();
         }
     }
 }

@@ -60,6 +60,8 @@ namespace pangyaCalcWinForm
             this.lbTacada = new System.Windows.Forms.Label();
             this.cbResolucao = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnZerar = new System.Windows.Forms.Button();
             this.txtQuebra = new System.Windows.Forms.TextBox();
@@ -76,23 +78,23 @@ namespace pangyaCalcWinForm
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtRangulo = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtQuebrasS8 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtQuebrasS4 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtHoleP = new System.Windows.Forms.TextBox();
+            this.cbHole = new System.Windows.Forms.ComboBox();
+            this.btnHole1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnWindHill = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDist
@@ -102,6 +104,7 @@ namespace pangyaCalcWinForm
             this.txtDist.Name = "txtDist";
             this.txtDist.Size = new System.Drawing.Size(85, 26);
             this.txtDist.TabIndex = 0;
+            this.txtDist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtDist.Leave += new System.EventHandler(this.txtDist_Changed);
             // 
             // label1
@@ -153,6 +156,7 @@ namespace pangyaCalcWinForm
             this.txtTerreno.Name = "txtTerreno";
             this.txtTerreno.Size = new System.Drawing.Size(85, 26);
             this.txtTerreno.TabIndex = 10;
+            this.txtTerreno.TextChanged += new System.EventHandler(this.txtTerreno_TextChanged_1);
             this.txtTerreno.Leave += new System.EventHandler(this.txtTerreno_TextChanged);
             // 
             // label6
@@ -260,7 +264,7 @@ namespace pangyaCalcWinForm
             this.groupBox2.Controls.Add(this.txtAim475);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.lbTacada);
-            this.groupBox2.Location = new System.Drawing.Point(248, 12);
+            this.groupBox2.Location = new System.Drawing.Point(222, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 227);
             this.groupBox2.TabIndex = 3;
@@ -437,6 +441,9 @@ namespace pangyaCalcWinForm
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnWindHill);
+            this.groupBox3.Controls.Add(this.btnRight);
+            this.groupBox3.Controls.Add(this.btnLeft);
             this.groupBox3.Controls.Add(this.groupBox7);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.label16);
@@ -444,9 +451,29 @@ namespace pangyaCalcWinForm
             this.groupBox3.Controls.Add(this.txtRangulo);
             this.groupBox3.Location = new System.Drawing.Point(12, 334);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(440, 215);
+            this.groupBox3.Size = new System.Drawing.Size(414, 215);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
+            // 
+            // btnRight
+            // 
+            this.btnRight.Location = new System.Drawing.Point(319, 52);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(75, 23);
+            this.btnRight.TabIndex = 35;
+            this.btnRight.Text = "<<<";
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Location = new System.Drawing.Point(188, 52);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(75, 23);
+            this.btnLeft.TabIndex = 34;
+            this.btnLeft.Text = ">>>";
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // groupBox7
             // 
@@ -457,15 +484,15 @@ namespace pangyaCalcWinForm
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.label18);
             this.groupBox7.Controls.Add(this.txtQuebraPX);
-            this.groupBox7.Location = new System.Drawing.Point(206, 26);
+            this.groupBox7.Location = new System.Drawing.Point(172, 84);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(228, 183);
+            this.groupBox7.Size = new System.Drawing.Size(236, 125);
             this.groupBox7.TabIndex = 29;
             this.groupBox7.TabStop = false;
             // 
             // btnZerar
             // 
-            this.btnZerar.Location = new System.Drawing.Point(75, 141);
+            this.btnZerar.Location = new System.Drawing.Point(140, 88);
             this.btnZerar.Name = "btnZerar";
             this.btnZerar.Size = new System.Drawing.Size(75, 23);
             this.btnZerar.TabIndex = 29;
@@ -477,7 +504,7 @@ namespace pangyaCalcWinForm
             // 
             this.txtQuebra.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtQuebra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuebra.Location = new System.Drawing.Point(137, 93);
+            this.txtQuebra.Location = new System.Drawing.Point(8, 83);
             this.txtQuebra.Name = "txtQuebra";
             this.txtQuebra.Size = new System.Drawing.Size(85, 26);
             this.txtQuebra.TabIndex = 30;
@@ -487,7 +514,7 @@ namespace pangyaCalcWinForm
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(151, 70);
+            this.label20.Location = new System.Drawing.Point(22, 60);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 20);
             this.label20.TabIndex = 31;
@@ -497,7 +524,7 @@ namespace pangyaCalcWinForm
             // 
             this.txtQuebraAngulo.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtQuebraAngulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuebraAngulo.Location = new System.Drawing.Point(6, 93);
+            this.txtQuebraAngulo.Location = new System.Drawing.Point(140, 31);
             this.txtQuebraAngulo.Name = "txtQuebraAngulo";
             this.txtQuebraAngulo.Size = new System.Drawing.Size(85, 26);
             this.txtQuebraAngulo.TabIndex = 28;
@@ -507,7 +534,7 @@ namespace pangyaCalcWinForm
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(22, 71);
+            this.label17.Location = new System.Drawing.Point(156, 9);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(59, 20);
             this.label17.TabIndex = 29;
@@ -517,7 +544,7 @@ namespace pangyaCalcWinForm
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(102, 14);
+            this.label18.Location = new System.Drawing.Point(35, 8);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(30, 20);
             this.label18.TabIndex = 27;
@@ -528,7 +555,7 @@ namespace pangyaCalcWinForm
             // 
             this.txtQuebraPX.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtQuebraPX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuebraPX.Location = new System.Drawing.Point(75, 37);
+            this.txtQuebraPX.Location = new System.Drawing.Point(8, 31);
             this.txtQuebraPX.Name = "txtQuebraPX";
             this.txtQuebraPX.Size = new System.Drawing.Size(85, 26);
             this.txtQuebraPX.TabIndex = 26;
@@ -540,7 +567,7 @@ namespace pangyaCalcWinForm
             this.groupBox6.Controls.Add(this.rbLdown);
             this.groupBox6.Controls.Add(this.rbRdown);
             this.groupBox6.Controls.Add(this.rbLup);
-            this.groupBox6.Location = new System.Drawing.Point(20, 81);
+            this.groupBox6.Location = new System.Drawing.Point(6, 84);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(153, 100);
             this.groupBox6.TabIndex = 33;
@@ -604,7 +631,7 @@ namespace pangyaCalcWinForm
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(71, 26);
+            this.label19.Location = new System.Drawing.Point(38, 27);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(59, 20);
             this.label19.TabIndex = 14;
@@ -613,79 +640,28 @@ namespace pangyaCalcWinForm
             // txtRangulo
             // 
             this.txtRangulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRangulo.Location = new System.Drawing.Point(58, 49);
+            this.txtRangulo.Location = new System.Drawing.Point(25, 50);
             this.txtRangulo.Name = "txtRangulo";
             this.txtRangulo.Size = new System.Drawing.Size(85, 26);
             this.txtRangulo.TabIndex = 13;
             this.txtRangulo.Leave += new System.EventHandler(this.txtRangulo_TextChanged);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.cbResolucao);
-            this.groupBox4.Location = new System.Drawing.Point(487, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(204, 227);
-            this.groupBox4.TabIndex = 28;
-            this.groupBox4.TabStop = false;
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtQuebrasS8);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.txtQuebrasS4);
-            this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.radioButton2);
+            this.groupBox5.Controls.Add(this.cbResolucao);
             this.groupBox5.Controls.Add(this.radioButton1);
-            this.groupBox5.Location = new System.Drawing.Point(4, 79);
+            this.groupBox5.Location = new System.Drawing.Point(9, 245);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(194, 142);
+            this.groupBox5.Size = new System.Drawing.Size(207, 86);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Quebras";
             // 
-            // txtQuebrasS8
-            // 
-            this.txtQuebrasS8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtQuebrasS8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuebrasS8.Location = new System.Drawing.Point(103, 90);
-            this.txtQuebrasS8.Name = "txtQuebrasS8";
-            this.txtQuebrasS8.Size = new System.Drawing.Size(85, 26);
-            this.txtQuebrasS8.TabIndex = 28;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(99, 67);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(94, 20);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "Quebras S8";
-            // 
-            // txtQuebrasS4
-            // 
-            this.txtQuebrasS4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtQuebrasS4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuebrasS4.Location = new System.Drawing.Point(6, 90);
-            this.txtQuebrasS4.Name = "txtQuebrasS4";
-            this.txtQuebrasS4.Size = new System.Drawing.Size(85, 26);
-            this.txtQuebrasS4.TabIndex = 26;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(2, 67);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 20);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Quebras S4";
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(114, 29);
+            this.radioButton2.Location = new System.Drawing.Point(109, 58);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(38, 17);
             this.radioButton2.TabIndex = 1;
@@ -697,7 +673,7 @@ namespace pangyaCalcWinForm
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(56, 29);
+            this.radioButton1.Location = new System.Drawing.Point(43, 58);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(38, 17);
             this.radioButton1.TabIndex = 0;
@@ -706,36 +682,107 @@ namespace pangyaCalcWinForm
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // textBox1
+            // groupBox4
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 280);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 20);
-            this.textBox1.TabIndex = 29;
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.btnHole1);
+            this.groupBox4.Controls.Add(this.txtHoleP);
+            this.groupBox4.Controls.Add(this.cbHole);
+            this.groupBox4.Location = new System.Drawing.Point(222, 245);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(204, 86);
+            this.groupBox4.TabIndex = 28;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Map";
             // 
-            // button1
+            // txtHoleP
             // 
-            this.button1.Location = new System.Drawing.Point(275, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Carregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtHoleP.Location = new System.Drawing.Point(6, 55);
+            this.txtHoleP.Name = "txtHoleP";
+            this.txtHoleP.Size = new System.Drawing.Size(45, 20);
+            this.txtHoleP.TabIndex = 29;
+            // 
+            // cbHole
+            // 
+            this.cbHole.FormattingEnabled = true;
+            this.cbHole.Items.AddRange(new object[] {
+            "Blue Lagoon",
+            "Pink Wind",
+            "West Wiz",
+            "Ice Spa",
+            "Lost Seaway",
+            "Wiz City",
+            "Abbot Mine",
+            "Shining Sand",
+            "Ice Cannon",
+            "Eastern Valley",
+            "Sepia Wind",
+            "Blue Moon",
+            "Blue Water",
+            "White Wiz",
+            "Wind Hill",
+            "Deep Inferno",
+            "Silvia Cannon",
+            "Ice Inferno",
+            "Wiz Wiz"});
+            this.cbHole.Location = new System.Drawing.Point(6, 19);
+            this.cbHole.Name = "cbHole";
+            this.cbHole.Size = new System.Drawing.Size(84, 21);
+            this.cbHole.TabIndex = 26;
+            this.cbHole.SelectedIndexChanged += new System.EventHandler(this.cbHole_SelectedIndexChanged);
+            // 
+            // btnHole1
+            // 
+            this.btnHole1.Location = new System.Drawing.Point(113, 9);
+            this.btnHole1.Name = "btnHole1";
+            this.btnHole1.Size = new System.Drawing.Size(75, 23);
+            this.btnHole1.TabIndex = 36;
+            this.btnHole1.Text = "<<<";
+            this.btnHole1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(113, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "<<<";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(113, 60);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "<<<";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnWindHill
+            // 
+            this.btnWindHill.Location = new System.Drawing.Point(319, 19);
+            this.btnWindHill.Name = "btnWindHill";
+            this.btnWindHill.Size = new System.Drawing.Size(75, 23);
+            this.btnWindHill.TabIndex = 36;
+            this.btnWindHill.Text = "Wind Hill";
+            this.btnWindHill.UseVisualStyleBackColor = true;
+            this.btnWindHill.Click += new System.EventHandler(this.btnWindHill_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(438, 561);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "Pangya Interface Calc";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -746,11 +793,11 @@ namespace pangyaCalcWinForm
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -787,14 +834,9 @@ namespace pangyaCalcWinForm
         private System.Windows.Forms.ComboBox tipoTacada;
         private System.Windows.Forms.ComboBox cbResolucao;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox txtQuebrasS8;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtQuebrasS4;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton rbRup;
         private System.Windows.Forms.RadioButton rbLdown;
@@ -811,8 +853,15 @@ namespace pangyaCalcWinForm
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtQuebraPX;
         private System.Windows.Forms.Button btnZerar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox cbHole;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.TextBox txtHoleP;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHole1;
+        private System.Windows.Forms.Button btnWindHill;
     }
 }
 

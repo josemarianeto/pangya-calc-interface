@@ -9,7 +9,6 @@ C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinFor
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\ClosedXML.xml
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\ExcelNumberFormat.xml
-C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.csproj.AssemblyReference.cache
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.Properties.Resources.resources
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.csproj.GenerateResource.cache
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.csproj.CoreCompileInputs.cache
@@ -17,3 +16,11 @@ C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinFor
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.exe
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.pdb
 C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.MainWindow.resources
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\System.IO.Packaging.xml
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.csproj.AssemblyReference.cache
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\EPPlus.dll
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\EPPlus.xml
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\n\source\repos\pangya-calc-interface\pangyaCalcWinForm\pangyaCalcWinForm\obj\Debug\pangyaCalcWinForm.windhill.resources
