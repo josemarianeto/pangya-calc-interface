@@ -157,6 +157,7 @@ namespace pangyaCalcWinForm
             this.txtTerreno.Size = new System.Drawing.Size(85, 26);
             this.txtTerreno.TabIndex = 10;
             this.txtTerreno.TextChanged += new System.EventHandler(this.txtTerreno_TextChanged_1);
+            this.txtTerreno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtTerreno.Leave += new System.EventHandler(this.txtTerreno_TextChanged);
             // 
             // label6
@@ -177,6 +178,7 @@ namespace pangyaCalcWinForm
             this.txtSlope.Name = "txtSlope";
             this.txtSlope.Size = new System.Drawing.Size(85, 26);
             this.txtSlope.TabIndex = 8;
+            this.txtSlope.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtSlope.Leave += new System.EventHandler(this.txtSlope_TextChanged);
             // 
             // label5
@@ -198,6 +200,7 @@ namespace pangyaCalcWinForm
             this.txtAngulo.ReadOnly = true;
             this.txtAngulo.Size = new System.Drawing.Size(85, 26);
             this.txtAngulo.TabIndex = 6;
+            this.txtAngulo.TabStop = false;
             // 
             // label4
             // 
@@ -216,6 +219,7 @@ namespace pangyaCalcWinForm
             this.txtVento.Name = "txtVento";
             this.txtVento.Size = new System.Drawing.Size(85, 26);
             this.txtVento.TabIndex = 4;
+            this.txtVento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtVento.Leave += new System.EventHandler(this.txtVento_TextChanged);
             // 
             // label3
@@ -235,6 +239,7 @@ namespace pangyaCalcWinForm
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(85, 26);
             this.txtAltura.TabIndex = 2;
+            this.txtAltura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtAltura.Leave += new System.EventHandler(this.txtAltura_TextChanged);
             // 
             // label2
@@ -300,6 +305,7 @@ namespace pangyaCalcWinForm
             this.tipoTacada.Size = new System.Drawing.Size(192, 21);
             this.tipoTacada.TabIndex = 4;
             this.tipoTacada.SelectedIndexChanged += new System.EventHandler(this.tipoTacada_SelectedIndexChanged);
+            this.tipoTacada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             // 
             // txtSpin
             // 
@@ -309,6 +315,7 @@ namespace pangyaCalcWinForm
             this.txtSpin.Name = "txtSpin";
             this.txtSpin.Size = new System.Drawing.Size(85, 26);
             this.txtSpin.TabIndex = 24;
+            this.txtSpin.TabStop = false;
             // 
             // label13
             // 
@@ -328,6 +335,7 @@ namespace pangyaCalcWinForm
             this.txtCalliper.Name = "txtCalliper";
             this.txtCalliper.Size = new System.Drawing.Size(85, 26);
             this.txtCalliper.TabIndex = 22;
+            this.txtCalliper.TabStop = false;
             // 
             // label12
             // 
@@ -347,6 +355,7 @@ namespace pangyaCalcWinForm
             this.txtPB.Name = "txtPB";
             this.txtPB.Size = new System.Drawing.Size(85, 26);
             this.txtPB.TabIndex = 20;
+            this.txtPB.TabStop = false;
             // 
             // label11
             // 
@@ -366,6 +375,7 @@ namespace pangyaCalcWinForm
             this.txtPercent.Name = "txtPercent";
             this.txtPercent.Size = new System.Drawing.Size(85, 26);
             this.txtPercent.TabIndex = 18;
+            this.txtPercent.TabStop = false;
             // 
             // label10
             // 
@@ -385,6 +395,7 @@ namespace pangyaCalcWinForm
             this.txtAim4.Name = "txtAim4";
             this.txtAim4.Size = new System.Drawing.Size(85, 26);
             this.txtAim4.TabIndex = 16;
+            this.txtAim4.TabStop = false;
             // 
             // label9
             // 
@@ -404,6 +415,7 @@ namespace pangyaCalcWinForm
             this.txtAim475.Name = "txtAim475";
             this.txtAim475.Size = new System.Drawing.Size(85, 26);
             this.txtAim475.TabIndex = 14;
+            this.txtAim475.TabStop = false;
             // 
             // label8
             // 
@@ -437,6 +449,7 @@ namespace pangyaCalcWinForm
             this.cbResolucao.Name = "cbResolucao";
             this.cbResolucao.Size = new System.Drawing.Size(173, 21);
             this.cbResolucao.TabIndex = 26;
+            this.cbResolucao.TabStop = false;
             this.cbResolucao.SelectedIndexChanged += new System.EventHandler(this.cbResolucao_SelectedIndexChanged);
             // 
             // groupBox3
@@ -461,6 +474,7 @@ namespace pangyaCalcWinForm
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(75, 23);
             this.btnRight.TabIndex = 35;
+            this.btnRight.TabStop = false;
             this.btnRight.Text = "<<<";
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
@@ -471,6 +485,7 @@ namespace pangyaCalcWinForm
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(75, 23);
             this.btnLeft.TabIndex = 34;
+            this.btnLeft.TabStop = false;
             this.btnLeft.Text = ">>>";
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
@@ -492,10 +507,11 @@ namespace pangyaCalcWinForm
             // 
             // btnZerar
             // 
-            this.btnZerar.Location = new System.Drawing.Point(140, 88);
+            this.btnZerar.Location = new System.Drawing.Point(140, 86);
             this.btnZerar.Name = "btnZerar";
             this.btnZerar.Size = new System.Drawing.Size(75, 23);
-            this.btnZerar.TabIndex = 29;
+            this.btnZerar.TabIndex = 98;
+            this.btnZerar.TabStop = false;
             this.btnZerar.Text = "Zerar";
             this.btnZerar.UseVisualStyleBackColor = true;
             this.btnZerar.Click += new System.EventHandler(this.btnZerar_Click);
@@ -508,6 +524,7 @@ namespace pangyaCalcWinForm
             this.txtQuebra.Name = "txtQuebra";
             this.txtQuebra.Size = new System.Drawing.Size(85, 26);
             this.txtQuebra.TabIndex = 30;
+            this.txtQuebra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtQuebra.Leave += new System.EventHandler(this.txtQuebra_Leave);
             // 
             // label20
@@ -528,6 +545,7 @@ namespace pangyaCalcWinForm
             this.txtQuebraAngulo.Name = "txtQuebraAngulo";
             this.txtQuebraAngulo.Size = new System.Drawing.Size(85, 26);
             this.txtQuebraAngulo.TabIndex = 28;
+            this.txtQuebraAngulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtQuebraAngulo.Leave += new System.EventHandler(this.txtQuebraAngulo_Leave);
             // 
             // label17
@@ -559,6 +577,7 @@ namespace pangyaCalcWinForm
             this.txtQuebraPX.Name = "txtQuebraPX";
             this.txtQuebraPX.Size = new System.Drawing.Size(85, 26);
             this.txtQuebraPX.TabIndex = 26;
+            this.txtQuebraPX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtQuebraPX.Leave += new System.EventHandler(this.txtQuebraPX_Leave);
             // 
             // groupBox6
@@ -580,7 +599,6 @@ namespace pangyaCalcWinForm
             this.rbRup.Name = "rbRup";
             this.rbRup.Size = new System.Drawing.Size(14, 13);
             this.rbRup.TabIndex = 30;
-            this.rbRup.TabStop = true;
             this.rbRup.UseVisualStyleBackColor = true;
             this.rbRup.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
@@ -591,7 +609,6 @@ namespace pangyaCalcWinForm
             this.rbLdown.Name = "rbLdown";
             this.rbLdown.Size = new System.Drawing.Size(14, 13);
             this.rbLdown.TabIndex = 32;
-            this.rbLdown.TabStop = true;
             this.rbLdown.UseVisualStyleBackColor = true;
             this.rbLdown.CheckedChanged += new System.EventHandler(this.rbLdown_CheckedChanged);
             // 
@@ -602,7 +619,6 @@ namespace pangyaCalcWinForm
             this.rbRdown.Name = "rbRdown";
             this.rbRdown.Size = new System.Drawing.Size(14, 13);
             this.rbRdown.TabIndex = 29;
-            this.rbRdown.TabStop = true;
             this.rbRdown.UseVisualStyleBackColor = true;
             this.rbRdown.CheckedChanged += new System.EventHandler(this.rbRdown_CheckedChanged);
             // 
@@ -613,7 +629,6 @@ namespace pangyaCalcWinForm
             this.rbLup.Name = "rbLup";
             this.rbLup.Size = new System.Drawing.Size(14, 13);
             this.rbLup.TabIndex = 31;
-            this.rbLup.TabStop = true;
             this.rbLup.UseVisualStyleBackColor = true;
             this.rbLup.CheckedChanged += new System.EventHandler(this.rbLup_CheckedChanged);
             // 
@@ -644,6 +659,7 @@ namespace pangyaCalcWinForm
             this.txtRangulo.Name = "txtRangulo";
             this.txtRangulo.Size = new System.Drawing.Size(85, 26);
             this.txtRangulo.TabIndex = 13;
+            this.txtRangulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             this.txtRangulo.Leave += new System.EventHandler(this.txtRangulo_TextChanged);
             // 
             // groupBox5
@@ -665,7 +681,6 @@ namespace pangyaCalcWinForm
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(38, 17);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "S8";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -676,11 +691,11 @@ namespace pangyaCalcWinForm
             this.radioButton1.Location = new System.Drawing.Point(43, 58);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(38, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
+            this.radioButton1.TabIndex = 99;
             this.radioButton1.Text = "S4";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oNovoTab);
             // 
             // groupBox4
             // 
@@ -701,7 +716,8 @@ namespace pangyaCalcWinForm
             this.txtHoleP.Location = new System.Drawing.Point(6, 55);
             this.txtHoleP.Name = "txtHoleP";
             this.txtHoleP.Size = new System.Drawing.Size(45, 20);
-            this.txtHoleP.TabIndex = 29;
+            this.txtHoleP.TabIndex = 96;
+            this.txtHoleP.TabStop = false;
             // 
             // cbHole
             // 
@@ -729,7 +745,8 @@ namespace pangyaCalcWinForm
             this.cbHole.Location = new System.Drawing.Point(6, 19);
             this.cbHole.Name = "cbHole";
             this.cbHole.Size = new System.Drawing.Size(84, 21);
-            this.cbHole.TabIndex = 26;
+            this.cbHole.TabIndex = 97;
+            this.cbHole.TabStop = false;
             this.cbHole.SelectedIndexChanged += new System.EventHandler(this.cbHole_SelectedIndexChanged);
             // 
             // btnHole1
@@ -737,7 +754,8 @@ namespace pangyaCalcWinForm
             this.btnHole1.Location = new System.Drawing.Point(113, 9);
             this.btnHole1.Name = "btnHole1";
             this.btnHole1.Size = new System.Drawing.Size(75, 23);
-            this.btnHole1.TabIndex = 36;
+            this.btnHole1.TabIndex = 95;
+            this.btnHole1.TabStop = false;
             this.btnHole1.Text = "<<<";
             this.btnHole1.UseVisualStyleBackColor = true;
             // 
@@ -746,7 +764,8 @@ namespace pangyaCalcWinForm
             this.button2.Location = new System.Drawing.Point(113, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 37;
+            this.button2.TabIndex = 94;
+            this.button2.TabStop = false;
             this.button2.Text = "<<<";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -755,7 +774,8 @@ namespace pangyaCalcWinForm
             this.button3.Location = new System.Drawing.Point(113, 60);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 38;
+            this.button3.TabIndex = 93;
+            this.button3.TabStop = false;
             this.button3.Text = "<<<";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -765,6 +785,7 @@ namespace pangyaCalcWinForm
             this.btnWindHill.Name = "btnWindHill";
             this.btnWindHill.Size = new System.Drawing.Size(75, 23);
             this.btnWindHill.TabIndex = 36;
+            this.btnWindHill.TabStop = false;
             this.btnWindHill.Text = "Wind Hill";
             this.btnWindHill.UseVisualStyleBackColor = true;
             this.btnWindHill.Click += new System.EventHandler(this.btnWindHill_Click);
@@ -779,6 +800,8 @@ namespace pangyaCalcWinForm
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(454, 600);
+            this.MinimumSize = new System.Drawing.Size(454, 600);
             this.Name = "MainWindow";
             this.Text = "Pangya Interface Calc";
             this.Load += new System.EventHandler(this.MainWindow_Load);

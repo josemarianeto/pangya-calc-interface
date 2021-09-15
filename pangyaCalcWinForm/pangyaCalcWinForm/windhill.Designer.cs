@@ -258,6 +258,8 @@ namespace pangyaCalcWinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(228, 351);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(244, 390);
+            this.MinimumSize = new System.Drawing.Size(244, 390);
             this.Name = "windhill";
             this.Text = "windhill";
             this.groupBox1.ResumeLayout(false);
